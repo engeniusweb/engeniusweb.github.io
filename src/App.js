@@ -202,7 +202,7 @@ class App extends React.Component {
               <option value="ellison%%Ellison Manley%%Web Designer">Ellison Manley</option>
               <option value="kory%%Kory Radford%%Accounts Manager">Kory Radford</option>
               <option value="olivia%%Olivia White%%Intern">Olivia White</option>
-              <option value="rachelt%%Rachel Biblo%%Director of Accounts">Rachel Testa</option>
+              <option value="rachelb%%Rachel Bilbo%%Director of Accounts">Rachel Bilbo</option>
               <option value="taylor%%Taylor Craig%%Content Strategist">Taylor Craig</option>
               <option value="tj%%TJ Deluccia%%Chief Operating Officer">TJ Deluccia</option>
             </FormControl>
