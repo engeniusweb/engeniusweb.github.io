@@ -200,14 +200,11 @@ class App extends React.Component {
               <option value="chris%%Chris Manley%%Co-founder &amp; CEO">Chris Manley</option>
               <option value="cody%%Cody Edgar%%Project Manager">Cody Edgar</option>
               <option value="ellison%%Ellison Manley%%Web Designer">Ellison Manley</option>
-              <option value="hannah%%Hannah Houck%%Intern">Hannah Houck</option>
               <option value="kory%%Kory Radford%%Accounts Manager">Kory Radford</option>
-              <option value="lauren%%Lauren Kay Humphrey%%Office Coordinator">Lauren Kay Humphrey</option>
-              <option value="rachelt%%Rachel Testa%%Director of Accounts">Rachel Testa</option>
-              <option value="sam%%Sam Nadler%%Accounts Coordinator">Sam Nadler</option>
-              <option value="susan%%Susan Fuls%%Support Manager">Susan Lesser</option>
+              <option value="olivia%%Olivia White%%Intern">Olivia White</option>
+              <option value="rachelt%%Rachel Biblo%%Director of Accounts">Rachel Testa</option>
               <option value="taylor%%Taylor Craig%%Content Strategist">Taylor Craig</option>
-              <option value="tj%%TJ Deluccia%%Director of Production">TJ Deluccia</option>
+              <option value="tj%%TJ Deluccia%%Chief Operating Officer">TJ Deluccia</option>
             </FormControl>
           </FormGroup>
           <FormGroup
