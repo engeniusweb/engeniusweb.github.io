@@ -12,7 +12,13 @@ var clipboard = new Clipboard('.btn'); //eslint-disable-line
 // The react bootstrap module imports bootstrap into the project
 // If there are any extra bootstrap components that you want to use,
 // you will need to add them below
-import  { ControlLabel, FormGroup, FormControl, Button, ButtonToolbar } from 'react-bootstrap'
+import {
+  ControlLabel,
+  FormGroup,
+  FormControl,
+  Button,
+  ButtonToolbar
+} from 'react-bootstrap';
 
 // OK so here is where you set the password.  Using process.env.whateveryouwant
 // you should be able to set it from heroku, but as the github is private,
@@ -20,12 +26,12 @@ import  { ControlLabel, FormGroup, FormControl, Button, ButtonToolbar } from 're
 var correctPassword = 'engenius';
 
 // Importing the wordpress api and connecting it to engenius
-var WPAPI = require( 'wpapi' );
+var WPAPI = require('wpapi');
 var wp = new WPAPI({ endpoint: 'https://engeniusweb.com/wp-json' });
 
 // This makes the switch to https.
 // if (window.location.protocol !== 'https:') {
-  // window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+// window.location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
 // }
 
 // So it's a bad coding practice to have these global variables
@@ -42,7 +48,7 @@ class App extends React.Component {
       value: '',
       code: '',
       copy: 'Copy',
-      password: '',
+      password: ''
     };
 
     // All of the functions have to be bound in the constructor
@@ -54,14 +60,13 @@ class App extends React.Component {
 
     // Build a query for Posts resources
     // Only returns one post (the most recent)
-    var postsQuery = wp.posts().perPage( 1 );
+    var postsQuery = wp.posts().perPage(1);
 
-    postsQuery.get(function( err, data )
-    {
-    // Handling an error; Shouldn't matter
-    if(err){
-      console.log(data);
-    }
+    postsQuery.get(function(err, data) {
+      // Handling an error; Shouldn't matter
+      if (err) {
+        console.log(data);
+      }
 
       // This will log all of the JSON data that comes from the query
       // If there is more that you want from the JSON, uncomment the line
@@ -75,36 +80,36 @@ class App extends React.Component {
 
       console.log(this.state.blogTitle);
     });
-}
+  }
 
   // This is what happens when you change the name (before you hit submit)
   // It just saves the person's name when you change the name
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value });
   }
-  copyClick(){
+  copyClick() {
     // Changes the text of the copy button when you hit Copy
-    this.setState({copy: 'Copied!'});
+    this.setState({ copy: 'Copied!' });
   }
   handlePasswordChange(event) {
     // Sets the password on every change
-    this.setState({password: event.target.value})
+    this.setState({ password: event.target.value });
   }
   getValidationState() {
     // This handles the validation.  It is compared to the password in line
     // 20.
     const length = this.state.password.length;
     const password = this.state.password;
-    if (password === correctPassword){
+    if (password === correctPassword) {
       return 'success';
-    }else if (length > 0) return 'error';
+    } else if (length > 0) return 'error';
   }
 
   // This is everything that happens when you hit submit (almost everything)
   handleSubmit(event) {
-    // Only continues if the password is correct. 
-    if(this.getValidationState() === 'success') {
-      this.setState({copy: 'Copy'})
+    // Only continues if the password is correct.
+    if (this.getValidationState() === 'success') {
+      this.setState({ copy: 'Copy' });
 
       // "Code" in this context is the html signature. This var will hold the html
       // as it is getting replaced with people's deets
@@ -134,115 +139,160 @@ class App extends React.Component {
       replacedCode = this.code.replace(/%id%/g, id);
       replacedCode = replacedCode.replace(/%name%/g, name);
       replacedCode = replacedCode.replace(/%title%/g, title);
-      replacedCode = replacedCode.replace(/%blogURL%/g, blogURL.substring(0, blogURL.length - 1));
+      replacedCode = replacedCode.replace(
+        /%blogURL%/g,
+        blogURL.substring(0, blogURL.length - 1)
+      );
       replacedCode = replacedCode.replace(/%blogTitle%/g, blogTitle);
 
       // Uses the newly replaced code in the state
-      this.setState({code: <Code embed={replacedCode} />});
-      this.setState({codeText: replacedCode});
+      this.setState({ code: <Code embed={replacedCode} /> });
+      this.setState({ codeText: replacedCode });
 
       event.preventDefault();
-    }
-    else{
+    } else {
       event.preventDefault();
     }
   }
 
   render() {
-     
-  // START OF CSS SECTION //
+    // START OF CSS SECTION //
 
-  // This is how you style in React.  I don't like it but meh.
-  var pixStyle = {
-  width: 200,
-  margin: "auto"
-  };
-  var lButtonStyle = {
-    width: 80,
-  }
-  var rButtonStyle = {
-    width: 80,
-    float: "right",
-  }
-  var btnToolbar = {
-    width: 200,
-    margin: "auto",
-  }
-  var table = {
-    width: 200,
-  }
-  var someMargin = {
-    margin: 80,
-  }
-  var dangerous = {
-    margin: "auto",
-    width: 500,
-  }
-  // END OF CSS SECTION //
+    // This is how you style in React.  I don't like it but meh.
+    var pixStyle = {
+      width: 200,
+      margin: 'auto'
+    };
+    var lButtonStyle = {
+      width: 80
+    };
+    var rButtonStyle = {
+      width: 80,
+      float: 'right'
+    };
+    var btnToolbar = {
+      width: 200,
+      margin: 'auto'
+    };
+    var table = {
+      width: 200
+    };
+    var someMargin = {
+      margin: 80
+    };
+    var dangerous = {
+      margin: 'auto',
+      width: 500
+    };
+    // END OF CSS SECTION //
 
-  // Below is the HTML Section which I don't feel like commenting.  The important thing to
-  // note is that the option vdalue is where people's information is saved.
-  // To add someone, just add them to this list and it should work
-  // To edit the structure, make sure you edit it here and in the getSubmit
-  // Method.
+    // Below is the HTML Section which I don't feel like commenting.  The important thing to
+    // note is that the option vdalue is where people's information is saved.
+    // To add someone, just add them to this list and it should work
+    // To edit the structure, make sure you edit it here and in the getSubmit
+    // Method.
     return (
       <div style={someMargin}>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"></link>
-      <script src="/node_modules/clipboard/dist/clipboard.min.js"></script>
-        <form onSubmit={this.handleSubmit}  style={pixStyle}>
-          <FormGroup controlId="formControlsSelect">
+        <link
+          rel='stylesheet'
+          href='https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css'
+        ></link>
+        <script src='/node_modules/clipboard/dist/clipboard.min.js'></script>
+        <form onSubmit={this.handleSubmit} style={pixStyle}>
+          <FormGroup controlId='formControlsSelect'>
             <ControlLabel>Select</ControlLabel>
-            <FormControl componentClass="select" placeholder="select" value={this.state.value} onChange={this.handleChange}>
-              <option value="">-- Select --</option>
-              <option value="anna%%Anna Beam%%Executive Assistant to the CEO / Director of Finance &amp; Administration">Anna Beam</option>
-              <option value="brent%%Brent Alexander%%Web Developer">Brent Alexander</option>
-              <option value="britany%%Britany Ochalek%%Content Strategist">Brittany Ochalek</option>
-              <option value="brooks%%Brooks Manley%%Project Manager">Brooks Manley</option>
-              <option value="chris%%Chris Manley%%Co-founder &amp; CEO">Chris Manley</option>
-              <option value="cody%%Cody Edgar%%Project Manager">Cody Edgar</option>
-              <option value="ellison%%Ellison Manley%%Web Designer">Ellison Manley</option>
-              <option value="kory%%Kory Radford%%Accounts Manager">Kory Radford</option>
-              <option value="mary%%Mary Varughese%%Intern">Mary Varughese</option>
-              <option value="molly%%Molly Willette-Green%%Project Manager">Molly Willette-Green</option>
-              <option value="olivia%%Olivia White%%Intern">Olivia White</option>
-              <option value="rachelb%%Rachel Bilbo%%Director of Accounts">Rachel Bilbo</option>
-              <option value="taylor%%Taylor Craig%%Content Strategist">Taylor Craig</option>
-              <option value="tj%%TJ Deluccia%%Chief Operating Officer">TJ Deluccia</option>
+            <FormControl
+              componentClass='select'
+              placeholder='select'
+              value={this.state.value}
+              onChange={this.handleChange}
+            >
+              <option value=''>-- Select --</option>
+              <option value='anna%%Anna Beam%%Executive Assistant to the CEO / Director of Finance &amp; Administration'>
+                Anna Beam
+              </option>
+              <option value='brent%%Brent Alexander%%Web Developer'>
+                Brent Alexander
+              </option>
+              <option value='britany%%Britany Ochalek%%Content Strategist'>
+                Brittany Ochalek
+              </option>
+              <option value='brooks%%Brooks Manley%%Project Manager'>
+                Brooks Manley
+              </option>
+              <option value='chris%%Chris Manley%%Co-founder &amp; CEO'>
+                Chris Manley
+              </option>
+              <option value='ellison%%Ellison Manley%%Web Designer'>
+                Ellison Manley
+              </option>
+              <option value='kory%%Kory Radford%%Accounts Manager'>
+                Kory Radford
+              </option>
+              <option value='mary%%Mary Varughese%%Intern'>
+                Mary Varughese
+              </option>
+              <option value='molly%%Molly Willette-Green%%Project Manager'>
+                Molly Willette-Green
+              </option>
+              <option value='chloe%%Chloe Adkins%%Intern'>Chloe Adkins</option>
+              <option value='taylor%%Taylor Craig%%Content Strategist'>
+                Taylor Craig
+              </option>
+              <option value='tj%%TJ Deluccia%%Chief Operating Officer'>
+                TJ Deluccia
+              </option>
             </FormControl>
           </FormGroup>
           <FormGroup
-            controlId="formBasicText"
+            controlId='formBasicText'
             validationState={this.getValidationState()}
           >
-          <ControlLabel>Password</ControlLabel>
+            <ControlLabel>Password</ControlLabel>
 
             <FormControl
-              type="password"
+              type='password'
               value={this.state.password}
-              placeholder="Password"
+              placeholder='Password'
               onChange={this.handlePasswordChange}
             />
-          <FormControl.Feedback />
-        </FormGroup>
+            <FormControl.Feedback />
+          </FormGroup>
           <ButtonToolbar style={btnToolbar}>
-              <table style={table}>
-                <thead>
-                  <tr>
-                    <th>
-                      <Button bsStyle="primary" type="submit" style={lButtonStyle}>Submit</Button>
-                    </th>
-                    <th>
-                      <Button style={rButtonStyle} onClick={this.copyClick} className="btn" data-clipboard-action="copy" data-clipboard-target="#div-target">{this.state.copy}</Button>
-                    </th>
-                  </tr>
-                </thead>
+            <table style={table}>
+              <thead>
+                <tr>
+                  <th>
+                    <Button
+                      bsStyle='primary'
+                      type='submit'
+                      style={lButtonStyle}
+                    >
+                      Submit
+                    </Button>
+                  </th>
+                  <th>
+                    <Button
+                      style={rButtonStyle}
+                      onClick={this.copyClick}
+                      className='btn'
+                      data-clipboard-action='copy'
+                      data-clipboard-target='#div-target'
+                    >
+                      {this.state.copy}
+                    </Button>
+                  </th>
+                </tr>
+              </thead>
             </table>
           </ButtonToolbar>
         </form>
         <br />
         <div style={dangerous}>
           <br />
-            <div id="div-target"><div dangerouslySetInnerHTML={{__html: this.state.codeText}} /></div>
+          <div id='div-target'>
+            <div dangerouslySetInnerHTML={{ __html: this.state.codeText }} />
+          </div>
           <br />
         </div>
         <br />
