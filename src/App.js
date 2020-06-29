@@ -1,13 +1,13 @@
-import React, { Component } from "react"; // eslint-disable-line no-unused-vars
+import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
 
 // This modeule is how I embeded the html code without it becoming real html
-import Code from "react-embed-code";
+import Code from 'react-embed-code';
 
 // Dis be da Clipboard
-import Clipboard from "clipboard";
+import Clipboard from 'clipboard';
 
 // Creates a new Clipboard
-var clipboard = new Clipboard(".btn"); //eslint-disable-line
+var clipboard = new Clipboard('.btn'); //eslint-disable-line
 
 // The react bootstrap module imports bootstrap into the project
 // If there are any extra bootstrap components that you want to use,
@@ -17,17 +17,17 @@ import {
   FormGroup,
   FormControl,
   Button,
-  ButtonToolbar
-} from "react-bootstrap";
+  ButtonToolbar,
+} from 'react-bootstrap';
 
 // OK so here is where you set the password.  Using process.env.whateveryouwant
 // you should be able to set it from heroku, but as the github is private,
 // and you may want to change up the production env, this should work.
-var correctPassword = "engenius";
+var correctPassword = 'engenius';
 
 // Importing the wordpress api and connecting it to engenius
-var WPAPI = require("wpapi");
-var wp = new WPAPI({ endpoint: "https://engeniusweb.com/wp-json" });
+var WPAPI = require('wpapi');
+var wp = new WPAPI({ endpoint: 'https://engeniusweb.com/wp-json' });
 
 // This makes the switch to https.
 // if (window.location.protocol !== 'https:') {
@@ -45,10 +45,10 @@ class App extends React.Component {
     super(props);
     // This is just setting the default state to Anna "because she is first"
     this.state = {
-      value: "",
-      code: "",
-      copy: "Copy",
-      password: ""
+      value: '',
+      code: '',
+      copy: 'Copy',
+      password: '',
     };
 
     // All of the functions have to be bound in the constructor
@@ -62,7 +62,7 @@ class App extends React.Component {
     // Only returns one post (the most recent)
     var postsQuery = wp.posts().perPage(1);
 
-    postsQuery.get(function(err, data) {
+    postsQuery.get(function (err, data) {
       // Handling an error; Shouldn't matter
       if (err) {
         console.log(data);
@@ -89,7 +89,7 @@ class App extends React.Component {
   }
   copyClick() {
     // Changes the text of the copy button when you hit Copy
-    this.setState({ copy: "Copied!" });
+    this.setState({ copy: 'Copied!' });
   }
   handlePasswordChange(event) {
     // Sets the password on every change
@@ -101,22 +101,22 @@ class App extends React.Component {
     const length = this.state.password.length;
     const password = this.state.password;
     if (password === correctPassword) {
-      return "success";
-    } else if (length > 0) return "error";
+      return 'success';
+    } else if (length > 0) return 'error';
   }
 
   // This is everything that happens when you hit submit (almost everything)
   handleSubmit(event) {
     // Only continues if the password is correct.
-    if (this.getValidationState() === "success") {
-      this.setState({ copy: "Copy" });
+    if (this.getValidationState() === 'success') {
+      this.setState({ copy: 'Copy' });
 
       // "Code" in this context is the html signature. This var will hold the html
       // as it is getting replaced with people's deets
       var replacedCode;
 
       // get the dataset, split it at %% to create an object
-      var data = this.state.value.split("%%");
+      var data = this.state.value.split('%%');
       console.log(data);
 
       // get the id
@@ -161,28 +161,28 @@ class App extends React.Component {
     // This is how you style in React.  I don't like it but meh.
     var pixStyle = {
       width: 200,
-      margin: "auto"
+      margin: 'auto',
     };
     var lButtonStyle = {
-      width: 80
+      width: 80,
     };
     var rButtonStyle = {
       width: 80,
-      float: "right"
+      float: 'right',
     };
     var btnToolbar = {
       width: 200,
-      margin: "auto"
+      margin: 'auto',
     };
     var table = {
-      width: 200
+      width: 200,
     };
     var someMargin = {
-      margin: 80
+      margin: 80,
     };
     var dangerous = {
-      margin: "auto",
-      width: 500
+      margin: 'auto',
+      width: 500,
     };
     // END OF CSS SECTION //
 
@@ -194,66 +194,65 @@ class App extends React.Component {
     return (
       <div style={someMargin}>
         <link
-          rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"
+          rel='stylesheet'
+          href='https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css'
         ></link>
-        <script src="/node_modules/clipboard/dist/clipboard.min.js"></script>
+        <script src='/node_modules/clipboard/dist/clipboard.min.js'></script>
         <form onSubmit={this.handleSubmit} style={pixStyle}>
-          <FormGroup controlId="formControlsSelect">
+          <FormGroup controlId='formControlsSelect'>
             <ControlLabel>Select</ControlLabel>
             <FormControl
-              componentClass="select"
-              placeholder="select"
+              componentClass='select'
+              placeholder='select'
               value={this.state.value}
               onChange={this.handleChange}
             >
-              <option value="">-- Select --</option>
-              <option value="anna%%Anna Beam%%Executive Assistant to the CEO / Director of Finance &amp; Administration">
+              <option value=''>-- Select --</option>
+              <option value='anna%%Anna Beam%%Executive Assistant to the CEO / Director of Finance &amp; Administration'>
                 Anna Beam
               </option>
-              <option value="brent%%Brent Alexander%%Web Developer">
+              <option value='brent%%Brent Alexander%%Web Developer'>
                 Brent Alexander
               </option>
-              <option value="britany%%Britany Ochalek%%Content Strategist">
+              <option value='britany%%Britany Ochalek%%Content Strategist'>
                 Brittany Ochalek
               </option>
-              <option value="brooks%%Brooks Manley%%Project Manager">
+              <option value='brooks%%Brooks Manley%%Project Manager'>
                 Brooks Manley
               </option>
-              <option value="chris%%Chris Manley%%Co-founder &amp; CEO">
+              <option value='chris%%Chris Manley%%Co-founder &amp; CEO'>
                 Chris Manley
               </option>
-              <option value="ellison%%Ellison Manley%%Web Designer">
+              <option value='ellison%%Ellison Manley%%Web Designer'>
                 Ellison Manley
               </option>
-              <option value="kory%%Kory Radford%%Accounts Manager">
+              <option value='kory%%Kory Radford%%Accounts Manager'>
                 Kory Radford
               </option>
-              <option value="mary%%Mary Varughese%%Intern">
+              <option value='mary%%Mary Varughese%%Intern'>
                 Mary Varughese
               </option>
-              <option value="molly%%Molly Willette-Green%%Project Manager">
+              <option value='molly%%Molly Willette-Green%%Project Manager'>
                 Molly Willette-Green
               </option>
-              <option value="chloe%%Chloe Adkins%%Intern">Chloe Adkins</option>
-              <option value="taylor%%Taylor Craig%%Content Strategist">
+              <option value='taylor%%Taylor Craig%%Client Success Manager'>
                 Taylor Craig
               </option>
-              <option value="tj%%TJ Deluccia%%Chief Operating Officer">
+              <option value='tj%%TJ Deluccia%%Chief Operating Officer'>
                 TJ Deluccia
               </option>
             </FormControl>
           </FormGroup>
           <FormGroup
-            controlId="formBasicText"
+            controlId='formBasicText'
             validationState={this.getValidationState()}
           >
             <ControlLabel>Password</ControlLabel>
 
             <FormControl
-              type="password"
+              type='password'
               value={this.state.password}
-              placeholder="Password"
+              placeholder='Password'
               onChange={this.handlePasswordChange}
             />
             <FormControl.Feedback />
@@ -264,8 +263,8 @@ class App extends React.Component {
                 <tr>
                   <th>
                     <Button
-                      bsStyle="primary"
-                      type="submit"
+                      bsStyle='primary'
+                      type='submit'
                       style={lButtonStyle}
                     >
                       Submit
@@ -275,9 +274,9 @@ class App extends React.Component {
                     <Button
                       style={rButtonStyle}
                       onClick={this.copyClick}
-                      className="btn"
-                      data-clipboard-action="copy"
-                      data-clipboard-target="#div-target"
+                      className='btn'
+                      data-clipboard-action='copy'
+                      data-clipboard-target='#div-target'
                     >
                       {this.state.copy}
                     </Button>
@@ -290,7 +289,7 @@ class App extends React.Component {
         <br />
         <div style={dangerous}>
           <br />
-          <div id="div-target">
+          <div id='div-target'>
             <div dangerouslySetInnerHTML={{ __html: this.state.codeText }} />
           </div>
           <br />
