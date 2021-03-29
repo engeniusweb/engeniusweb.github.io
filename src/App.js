@@ -214,9 +214,6 @@ class App extends React.Component {
               <option value='brent%%Brent Alexander%%Web Developer'>
                 Brent Alexander
               </option>
-              <option value='brooks%%Brooks Manley%%Project Manager'>
-                Brooks Manley
-              </option>
               <option value='chris%%Chris Manley%%Co-founder &amp; CEO'>
                 Chris Manley
               </option>
@@ -226,7 +223,7 @@ class App extends React.Component {
               <option value='kory%%Kory Radford%%Accounts Manager'>
                 Kory Radford
               </option>
-              <option value='molly%%Molly Willette-Green%%Project Manager'>
+              <option value='molly%%Molly Willette-Green%%Project Manager, Director of Production'>
                 Molly Willette-Green
               </option>
               <option value='sam%%Sam Thoe%%Client Success Coordinator'>
@@ -235,7 +232,7 @@ class App extends React.Component {
               <option value='samantha%%Samantha Wagner%%Sales & Marketing Coordinator'>
                 Samantha Wagner
               </option>
-              <option value='taylor%%Taylor Craig%%Client Success Manager'>
+              <option value='taylor%%Taylor Craig%%Content & SEO Strategist'>
                 Taylor Craig
               </option>
               <option value='tj%%TJ Deluccia%%Chief Operating Officer'>
