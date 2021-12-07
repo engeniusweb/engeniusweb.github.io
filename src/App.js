@@ -221,7 +221,7 @@ class App extends React.Component {
                 Chris Manley
               </option>
               <option value='ellison%%Ellison Manley%%Web Designer'>
-                Ellison C. Manley
+                Ellison Manley
               </option>
               <option value='kory%%Kory Radford%%Accounts Manager'>
                 Kory Radford
