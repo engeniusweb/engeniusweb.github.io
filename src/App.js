@@ -235,9 +235,6 @@ class App extends React.Component {
               <option value='samantha%%Samantha Wagner%%Sales &amp; Marketing Coordinator'>
                 Samantha Wagner
               </option>
-              <option value='taylor%%Taylor Craig%%Content &amp; SEO Strategist'>
-                Taylor Craig
-              </option>
               <option value='tj%%TJ Deluccia%%Chief Operating Officer'>
                 TJ Deluccia
               </option>
