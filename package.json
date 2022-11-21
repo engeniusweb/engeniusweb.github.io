@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "engenius-email-signatures",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,10 +18,8 @@
     "vite": "^3.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "echo Skip build on Heroku"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   }
 }
