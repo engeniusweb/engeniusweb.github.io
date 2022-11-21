@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import users from './users.json';
+import { generateSignature, useLocalStorage } from './utils';
 
 export const App = () => {
   const [loading, setLoading] = useState(true);
   const [blogPost, setBlogPost] = useState();
-  const [user, setUser] = useState();
+  const [user, setUser] = useLocalStorage(null, 'user');
 
   useEffect(() => {
     fetch('https://engeniusweb.com/wp-json/wp/v2/posts?per_page=1')
@@ -17,15 +18,19 @@ export const App = () => {
 
   return (
       <div className='flex justify-center items-center w-screen h-screen'>
-        <div className='bg-white rounded mx-auto w-96 overflow-hidden'>
+        <div className='bg-white rounded mx-auto min-w-96 overflow-hidden'>
           {user ? (
               <div>
-                <div className='flex items-center p-2'>
+                <div className='flex items-center p-2 border-b'>
                   <p className='text-xl'>Hi, {user.name.split(' ')[0]}!</p>
                   <div className='grow'/>
-                  <button className='text-primary hover:text-primary-200' onClick={() => setUser(undefined)}>
+                  <button className='text-primary hover:text-primary-200' onClick={() => setUser(null)}>
                     Switch User
                   </button>
+                </div>
+
+                <div className='p-4'>
+                  <div dangerouslySetInnerHTML={{ __html: generateSignature(user, blogPost) }} />
                 </div>
               </div>
           ) : (
