@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background-image: url('https://engeniusweb.com/wlcms/bg.png');
+    background-size: cover;
+}
