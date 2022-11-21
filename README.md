@@ -1,23 +1,34 @@
 # Engenius Email Signature Generator
 
-This is a React App to generate email signatures for Engenius
+A simple React application to generate email signatures for [Engenius](https://engeniusweb.com/).
 
-### Current Stack Organization
+## Current Stack Organization
 
 - React
-- GitHub (source code)
-- GitHub Pages (deployment)
+- [GitHub](https://github.com/engeniusweb/engeniusweb.github.io) (source code)
+- [GitHub Pages](https://engeniusweb.github.io/) (deployment)
 
-### Local Dev Environment
+## Local Development
 
-- Install `npm`
-- Clone this repository
-- 'cd' into this repository
-- Use 'npm start' to begin a development server
-- Once you are ready to push changes to github/heroku (Assuming that you have SSH access to the repository)
-  - 'git add .'
-  - 'git commit -m 'commit message''
-  - 'git push'
-- This will push changes to github which is already linked to heroku and will make changes live
+- Clone this repository (`git clone https://github.com/engeniusweb/engeniusweb.github.io.git`).
+- Install `node`/`npm` and be sure to use `node` >= 16.x.
+- Run `npm install` from the repository on your computer to install the required dependencies/libraries.
+- Run `npm run dev` to spin up a development server, and navigate to the link it provides.
 
-# email_signatures
+## Adding/Updating Users
+
+Navigate to [users.json](https://github.com/engeniusweb/engeniusweb.github.io/blob/master/src/users.json) and create/modify any user information you need. Each user requires 3 fields to function:
+
+- `name`: The user's full name.
+- `username`: The user's "username", which is also the beginning of their email (e.g. `arianna` -> `arianna@engeniusweb.com`).
+- `title`: The user's title at the company.
+
+## Committing Changes
+
+After you've made any necessary changes to the files on your local machine, run the following commands to add the files and deploy them.
+
+- `git add .`
+- `git commit -m "<example message>"`
+- `git push`
+
+GitHub CI/CD has been set up, so whenever you push any changes, they will go live within minutes assuming nothing goes wrong with the build.
