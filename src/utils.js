@@ -1,5 +1,11 @@
 import { useState } from 'react';
 
+/**
+ * A React hook to persist state to local storage.
+ * @param initialValue The initial state value
+ * @param key The local storage key
+ * @returns the same tuple as useState: the state, and a dispatcher
+ */
 export function useLocalStorage(initialValue, key) {
   const stored = localStorage.getItem(key);
   const [state, setState] = useState(
