@@ -5,16 +5,12 @@ This is a React App to generate email signatures for Engenius
 ### Current Stack Organization
 
 - React
-- Node JS
-- Github
-- Heroku (Heroku 20)
+- GitHub (source code)
+- GitHub Pages (deployment)
 
 ### Local Dev Environment
 
-> I am usng cloud9 for my development environment because it makes things simple on Windows.
-> but that isn't necessary.
-
-- Install node js
+- Install `npm`
 - Clone this repository
 - 'cd' into this repository
 - Use 'npm start' to begin a development server
