@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import users from './users.json';
 import { generateSignature, useLocalStorage } from './utils';
+import ReactTooltip from 'react-tooltip';
 
 export const App = () => {
   const [blogPost, setBlogPost] = useState();
@@ -74,7 +75,14 @@ export const App = () => {
 
           {!loading && !user && (
               <div className='flex flex-col'>
-                <p className='text-xl text-center border-b py-2'>Who Are You?</p>
+                <p className='text-xl text-center border-b py-2'>
+                  Email Signature Generator
+                  <i className='fa-solid fa-circle-question ml-2' data-tip data-for='help' />
+                  <ReactTooltip id='help' effect='solid' multiline>
+                    <p className='mb-0'>Auto-copy your signature by clicking your user.</p>
+                    <p>After you choose your signature, this page will remember your selection!</p>
+                  </ReactTooltip>
+                </p>
 
                 {
                   users.map((user) => {
