@@ -3,12 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "clipboard": "^1.7.1",
     "react": "^18.2.0",
-    "react-bootstrap": "^0.31.5",
-    "react-dom": "^18.2.0",
-    "react-embed-code": "^0.1.0",
-    "react-https-redirect": "^1.0.9"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^2.2.0",
