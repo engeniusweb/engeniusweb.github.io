@@ -78,9 +78,6 @@ export function generateSignature(user, blogPost) {
 	<a style="text-decoration: none;" href="http://facebook.com/engeniusweb">
     	<img style="display: inline-block; position: relative; cursor: pointer; height: 20px; width: 20px; padding: 0px; border-radius: 50%; margin: 2px 4px 0 0;" src="https://engeniusweb.com/signatures/facebook.png" width="20" height="20" alt="Facebook" title="Facebook" vspace="0" hspace="0">
 	</a>
-	<a style="text-decoration: none;" href="http://twitter.com/engeniusweb">
-    	<img style="display: inline-block; position: relative; cursor: pointer; height: 20px; width: 20px; padding: 0px; border-radius: 50%; margin: 2px 4px 0 0;" src="https://engeniusweb.com/signatures/twitter.png" width="20" height="20" alt="Twitter" title="Twitter" vspace="0" hspace="0">
-	</a>
 	<a style="text-decoration: none;" href="http://instagram.com/engeniusweb">
     	<img style="display: inline-block; position: relative; cursor: pointer; height: 20px; width: 20px; padding: 0px; border-radius: 50%; margin: 2px 4px 0 0;" src="https://engeniusweb.com/signatures/instagram.png" width="20" height="20" alt="Instagram" title="Instagram" vspace="0" hspace="0">
 	</a>
