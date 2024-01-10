@@ -42,8 +42,8 @@ export const App = () => {
   }, [blogPost, user]);
 
   return (
-      <div className='flex justify-center items-center w-screen h-screen'>
-        <div className='bg-white rounded mx-auto min-w-[384px] overflow-hidden'>
+      <div className='flex justify-center items-center w-screen min-h-screen'>
+        <div className='bg-white rounded min-w-[384px] w-full sm:w-auto h-full sm:h-auto my-0 sm:my-4 overflow-hidden'>
           {loading && (
               <div className='flex items-center justify-center p-12'>
                 Loading...
