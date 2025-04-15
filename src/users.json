@@ -1,18 +1,8 @@
 [
   {
-    "name": "Anna Beam",
-    "username": "anna",
-    "title": "Executive Assistant to the CEO"
-  },
-  {
-    "name": "Katie Moore",
-    "username": "katie",
-    "title": "Bookkeeper"
-  },
-  {
     "name": "Cassidy Padgett",
     "username": "cassidy",
-    "title": "Support Manager"
+    "title": "Marketing Guide & Support Manager"
   },
   {
     "name": "Chris Manley",
@@ -22,22 +12,22 @@
   {
     "name": "Ellison Manley",
     "username": "ellison",
-    "title": "Web Designer"
+    "title": "Web Manager"
   },
   {
     "name": "Kory Radford",
     "username": "kory",
-    "title": "Accounts Manager"
+    "title": "President"
   },
   {
     "name": "Molly Willette-Green",
     "username": "molly",
-    "title": "Project Manager, Director of Production"
+    "title": "Chief Operating Officer"
   },
   {
     "name": "Randall Stewart",
     "username": "randall",
-    "title": "Client Success Manager"
+    "title": "Marketing Guide & Data Analyst"
   },
   {
     "name": "Richard Aronson",
@@ -47,12 +37,7 @@
   {
     "name": "Samantha Sorenson",
     "username": "samantha",
-    "title": "Outreach &amp; Engagement Specialist"
-  },
-  {
-    "name": "TJ Deluccia",
-    "username": "tj",
-    "title": "Chief Operating Officer"
+    "title": "Marketing Guide & Sales Admin"
   },
   {
     "name": "Paige Helms",
@@ -67,7 +52,7 @@
   {
     "name": "Herman Hassan",
     "username": "herman",
-    "title": "Project Manager"
+    "title": "Marketing Guide & Project Manager"
   },
   {
     "name": "Emily Bobbitt",
