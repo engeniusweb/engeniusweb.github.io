@@ -20,11 +20,6 @@
     "title": "Marketing Guide"
   },
   {
-    "name": "Molly Williamson",
-    "username": "molly",
-    "title": "Chief Operating Officer"
-  },
-  {
     "name": "Randall Stewart",
     "username": "randall",
     "title": "Marketing Guide"
@@ -43,6 +38,11 @@
     "name": "Paige Helms",
     "username": "paige",
     "title": "Marketing Specialist"
+  },
+    {
+    "name": "Erin Jordan",
+    "username": "erin",
+    "title": "Interim Support Manager & Marketing Specialist"
   },
   {
     "name": "Emily Bobbitt",
