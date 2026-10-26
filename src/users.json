@@ -15,9 +15,19 @@
     "title": "Senior Web Specialist"
   },
   {
-    "name": "Ryan Frick",
-    "username": "ryan",
-    "title": "Marketing Guide"
+    "name": "Emily Bobbitt",
+    "username": "emily",
+    "title": "Office Manager"
+  },
+  {
+    "name": "Erin Jordan",
+    "username": "erin",
+    "title": "Interim Support Manager & Marketing Specialist"
+  },
+  {
+    "name": "Paige Helms",
+    "username": "paige",
+    "title": "Marketing Specialist"
   },
   {
     "name": "Randall Stewart",
@@ -30,23 +40,18 @@
     "title": "Marketing Director"
   },
   {
+    "name": "Ryan Frick",
+    "username": "ryan",
+    "title": "Marketing Guide"
+  },
+  {
     "name": "Samantha Sorenson",
     "username": "samantha",
     "title": "Client Specialist"
   },
-  {
-    "name": "Paige Helms",
-    "username": "paige",
-    "title": "Marketing Specialist"
-  },
     {
-    "name": "Erin Jordan",
-    "username": "erin",
-    "title": "Interim Support Manager & Marketing Specialist"
-  },
-  {
-    "name": "Emily Bobbitt",
-    "username": "emily",
-    "title": "Office Manager"
+    "name": "Viany Cruz",
+    "username": "viany",
+    "title": "Support Coordinator"
   }
 ]
